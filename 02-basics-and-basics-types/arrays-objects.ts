@@ -19,10 +19,8 @@ let users : (string | number)[];
 
 users = ["Basil", 12];
 console.log(users);
-
 users = [12, "Basil"];
 console.log(users);
-
 users = ["Basil", "Ermatinger"];
 console.log(users);
 
@@ -35,9 +33,61 @@ let ids : Array<string | number>;
 
 ids = ["ABC", 123];
 console.log(ids);
-
 ids = [456, "DEF"];
 console.log(ids);
-
 ids = ["GHI", "JKL"];
 console.log(ids);
+
+// Tuples
+console.log("---------------------")
+console.log("Tuples");
+console.log("---------------------")
+
+let tuple : [number, number];
+let anotherTuple : [number, string];
+
+tuple = [1, -1]
+console.log(`tuple: ${tuple}`);
+
+anotherTuple = [1, "One"];
+console.log(`anotherTuple: ${anotherTuple}`);
+
+// Objects
+console.log("---------------------")
+console.log("Objects");
+console.log("---------------------")
+
+let user : {
+  name : string,
+  age : number,
+  hobbies : string[],
+  role : {
+    description : string,
+    id : number,
+  }
+}
+
+user = {
+  name: "Basil",
+  age: 39,
+  hobbies: ["Music", "Gaming"],
+  role: {
+    description: "Programmer",
+    id: 2,
+  }
+};
+
+console.log("user:");
+console.log(user);
+
+// "Must Not be Null"
+console.log("---------------------")
+console.log("Must Not be Null");
+console.log("---------------------")
+
+let val : {}; // means not "null or undefinied"
+
+val = "test";
+console.log(val);
+val = false;
+console.log(val);
