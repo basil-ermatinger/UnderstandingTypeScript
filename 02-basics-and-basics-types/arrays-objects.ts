@@ -3,7 +3,7 @@ console.log("---------------------")
 console.log("Arrays");
 console.log("---------------------")
 
-let hobbies : string[];
+let hobbies: string[];
 hobbies = ["Sports", "Cooking"];
 console.log(hobbies)
 
@@ -15,7 +15,7 @@ console.log("---------------------")
 console.log("Advanced Array Types");
 console.log("---------------------")
 
-let users : (string | number)[];
+let users: (string | number)[];
 
 users = ["Basil", 12];
 console.log(users);
@@ -29,7 +29,7 @@ console.log("---------------------")
 console.log("Alternative Array Type Declaration");
 console.log("---------------------")
 
-let ids : Array<string | number>;
+let ids: Array<string | number>;
 
 ids = ["ABC", 123];
 console.log(ids);
@@ -43,8 +43,8 @@ console.log("---------------------")
 console.log("Tuples");
 console.log("---------------------")
 
-let tuple : [number, number];
-let anotherTuple : [number, string];
+let tuple: [number, number];
+let anotherTuple: [number, string];
 
 tuple = [1, -1]
 console.log(`tuple: ${tuple}`);
@@ -57,13 +57,13 @@ console.log("---------------------")
 console.log("Objects");
 console.log("---------------------")
 
-let user : {
-  name : string,
-  age : number,
-  hobbies : string[],
-  role : {
-    description : string,
-    id : number,
+let user: {
+  name: string,
+  age: number,
+  hobbies: string[],
+  role: {
+    description: string,
+    id: number,
   }
 }
 
@@ -85,9 +85,25 @@ console.log("---------------------")
 console.log("Must Not be Null");
 console.log("---------------------")
 
-let val : {}; // means not "null or undefinied"
+let val: {}; // means not "null or undefinied"
 
 val = "test";
 console.log(val);
 val = false;
 console.log(val);
+
+// Flexible Objects with Record Type
+console.log("---------------------")
+console.log("Flexible Objects with Record Type");
+console.log("---------------------")
+
+let data: Record<string | number, string | number>;
+
+data = {
+  entry1: 1,
+  entry2: "some string",
+  1: 2,
+  2: "some other string"
+}
+
+console.log(data);

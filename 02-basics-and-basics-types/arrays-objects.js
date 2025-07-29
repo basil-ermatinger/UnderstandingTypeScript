@@ -64,3 +64,15 @@ val = "test";
 console.log(val);
 val = false;
 console.log(val);
+// Flexible Objects with Record Type
+console.log("---------------------");
+console.log("Flexible Objects with Record Type");
+console.log("---------------------");
+var data;
+data = {
+    entry1: 1,
+    entry2: "some string",
+    1: 2,
+    2: "some other string"
+};
+console.log(data);
