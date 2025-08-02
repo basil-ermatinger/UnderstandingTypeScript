@@ -24,3 +24,12 @@ possibleResultsLiteral = [1, 12];
 console.log(possibleResultsLiteral);
 possibleResultsLiteral = [-1, 12];
 console.log(possibleResultsLiteral);
+// Aliases and Custom Types
+console.log("\nALIASES AND CUSTOM TYPES");
+var userRoleByAlias;
+userRoleByAlias = "editor";
+var access = function (roleByAlias) {
+    console.log("userRoleByAlias: ".concat(roleByAlias));
+};
+access(userRoleByAlias);
+access("guest");

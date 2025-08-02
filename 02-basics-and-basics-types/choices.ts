@@ -34,3 +34,19 @@ console.log(possibleResultsLiteral);
 
 possibleResultsLiteral = [-1, 12];
 console.log(possibleResultsLiteral);
+
+// Aliases and Custom Types
+console.log("\nALIASES AND CUSTOM TYPES");
+
+type RoleAlias = "admin" | "editor" | "guest";
+
+let userRoleByAlias: RoleAlias;
+
+userRoleByAlias = "editor";
+
+const access = (roleByAlias: RoleAlias): void => {
+  console.log(`userRoleByAlias: ${roleByAlias}`)
+}
+
+access(userRoleByAlias);
+access("guest");
