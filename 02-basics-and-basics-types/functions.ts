@@ -1,13 +1,13 @@
 // Function Return Value Types
 console.log("\nFUNCTION RETURN VALUE TYPES");
 
-const add = (a: number, b: number): number => {
+const addNumbers = (a: number, b: number): number => {
   return a + b;
 }
 
 let addedNumber: number;
 
-addedNumber = add(1, 2);
+addedNumber = addNumbers(1, 2);
 console.log(addedNumber);
 
 // "void" Type
@@ -49,7 +49,7 @@ type User = {
   greet: () => string;
 }
 
-let user: User = {
+let userTest: User = {
   name: "Basil",
   age: 39,
   greet() {
@@ -58,4 +58,4 @@ let user: User = {
   }
 }
 
-console.log(user.greet());
+console.log(userTest.greet());
