@@ -1,3 +1,4 @@
+// Optional
 type UserWithOptional = {
   name: string;
   age: number;
@@ -26,5 +27,16 @@ function generateError(msg?: string) {
   }
 }
 
-generateError();
-generateError("Error")
+// generateError();
+// generateError("Error")
+
+// Nullish Coalescing Operator
+let input = null;
+
+let didProvideInput: string | boolean | null = input ?? false;
+console.log(didProvideInput);
+
+input = "";
+didProvideInput = input ?? false;
+console.log(didProvideInput);
+

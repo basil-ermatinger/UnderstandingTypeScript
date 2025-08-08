@@ -17,5 +17,12 @@ function generateError(msg) {
         console.log("No error detected");
     }
 }
-generateError();
-generateError("Error");
+// generateError();
+// generateError("Error")
+// Nullish Coalescing Operator
+var input = null;
+var didProvideInput = input !== null && input !== void 0 ? input : false;
+console.log(didProvideInput);
+input = "";
+didProvideInput = input !== null && input !== void 0 ? input : false;
+console.log(didProvideInput);
