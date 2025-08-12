@@ -1,26 +1,26 @@
-type InvestmentData = {
+type InvestmentDataBasil = {
   initialAmount: number;
   annualContribution: number;
   expectedReturn: number;
   duration: number;
 }
 
-type InvestmentResult = {
+type InvestmentResultBasil = {
   year: number;
   total: number;
   totalContribution: number;
   totalInterestEarned: number;
 }
 
-const investmentData: InvestmentData = {
+const investmentDataBasil: InvestmentDataBasil = {
   initialAmount: 5000,
   annualContribution: 500,
   expectedReturn: 0.08,
   duration: 10
 }
 
-const calculateInvestment = (data: InvestmentData): InvestmentResult[] => {
-  let result: InvestmentResult[] = [];
+const calculateInvestmentBasil = (data: InvestmentDataBasil): InvestmentResultBasil[] => {
+  let result: InvestmentResultBasil[] = [];
 
   let currentTotal = data.initialAmount;
   let currentInterestEarned = 0;
@@ -41,7 +41,7 @@ const calculateInvestment = (data: InvestmentData): InvestmentResult[] => {
   return result;
 };
 
-const printResults = (result: InvestmentResult[]) => {
+const printResultsBasil = (result: InvestmentResultBasil[]) => {
   result.forEach(r => {
     console.log(`Year: ${r.year}`);
     console.log(`Total: ${r.total}`);
@@ -51,7 +51,7 @@ const printResults = (result: InvestmentResult[]) => {
   })
 };
 
-const results = calculateInvestment(investmentData);
+const results = calculateInvestmentBasil(investmentDataBasil);
 
-printResults(results);
+printResultsBasil(results);
 
