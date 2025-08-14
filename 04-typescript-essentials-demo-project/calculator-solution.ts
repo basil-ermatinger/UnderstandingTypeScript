@@ -32,7 +32,7 @@ const calculateInvestment = (data: InvestmentData): CalculationResult => {
   const annualResults: InvestmentResult[] = [];
 
   for(let i = 0; i < duration; i++) {
-    total *= total * (1 + expectedReturn);
+    total *= 1 + expectedReturn;
     totalInterestEarned = total - totalContributions - initialAmount;
     totalContributions += annualContribution;
     total += annualContribution;
@@ -48,10 +48,28 @@ const calculateInvestment = (data: InvestmentData): CalculationResult => {
   return annualResults;
 };
 
-const printResults = (results) => {
+const printResults = (results: CalculationResult) => {
+  if(typeof results === "string") {
+    console.log(results);
+    return;
+  }
 
+  results.forEach(r => {
+    console.log(r.year);
+    console.log(`Total: ${r.totalAmount.toFixed(0)}`);
+    console.log(`Total Contributions: ${r.totalContributions.toFixed(0)}`);
+    console.log(`Total Interest Earned: ${r.totalInterestEarned.toFixed(0)}`);
+    console.log("---------------");
+  })
 };
 
-const results = calculateInvestment(...);
+const investmentData: InvestmentData = {
+  initialAmount: 5000,
+  annualContribution: 500,
+  expectedReturn: 0.08,
+  duration: 10
+}
+
+const results = calculateInvestment(investmentData);
 
 printResults(results);

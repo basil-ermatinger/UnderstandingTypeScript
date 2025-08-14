@@ -51,7 +51,7 @@ const printResultsBasil = (result: InvestmentResultBasil[]) => {
   })
 };
 
-const results = calculateInvestmentBasil(investmentDataBasil);
+const resultsBasil = calculateInvestmentBasil(investmentDataBasil);
 
-printResultsBasil(results);
+printResultsBasil(resultsBasil);
 

@@ -1,11 +1,11 @@
 "use strict";
-const investmentData = {
+const investmentDataBasil = {
     initialAmount: 5000,
     annualContribution: 500,
     expectedReturn: 0.08,
     duration: 10
 };
-const calculateInvestment = (data) => {
+const calculateInvestmentBasil = (data) => {
     let result = [];
     let currentTotal = data.initialAmount;
     let currentInterestEarned = 0;
@@ -22,7 +22,7 @@ const calculateInvestment = (data) => {
     }
     return result;
 };
-const printResults = (result) => {
+const printResultsBasil = (result) => {
     result.forEach(r => {
         console.log(`Year: ${r.year}`);
         console.log(`Total: ${r.total}`);
@@ -31,5 +31,5 @@ const printResults = (result) => {
         console.log("---------------");
     });
 };
-const results = calculateInvestment(investmentData);
-printResults(results);
+const resultsBasil = calculateInvestmentBasil(investmentDataBasil);
+printResultsBasil(resultsBasil);
