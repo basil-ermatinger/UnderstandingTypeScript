@@ -36,3 +36,60 @@ if(button) {
 const addWithDefault = (a: number, b: number = 2) => a + b;
 
 console.log(addWithDefault(3));
+
+// Examples for spread operator
+
+const hobbies = ["Sports", "Cooking"];
+
+const activeHobbies = ["Gaming", "Programming"];
+activeHobbies.push(...hobbies);
+
+const moreHobbies = ["Eating", ...hobbies, ...activeHobbies];
+
+console.log(hobbies);
+console.log(activeHobbies);
+console.log(moreHobbies);
+
+const person = {
+  name: "Basil",
+  age: 30,
+}
+
+const copiedPerson = { ...person };
+copiedPerson.name = "Other Basil";
+
+console.log(person);
+console.log(copiedPerson);
+
+// Examples for rest parameters
+
+const addWithRestPara = (...numbers: number[]) => numbers.reduce((curResult, curValue) => curResult + curValue, 0)
+
+const addFiveNumbers = addWithRestPara(1, 2, 3, 4, 5.5);
+const addTenNumbers = addWithRestPara(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+console.log(addFiveNumbers);
+console.log(addTenNumbers);
+
+const subtractWithRestParaThreeNumbers = (...numbers: [number, number, number]) => numbers.reduce((curResult, curValue) => curResult - curValue, numbers[0]);
+
+const subtractFiveNumbers = subtractWithRestParaThreeNumbers(10, 3, 2);
+console.log(subtractFiveNumbers);
+
+// Examples for array and object destruction
+
+const games = ["Fallout", "Skyrim", "GTA", "Final Fantasy"]
+const [game1, game2, ...remainingGames] = games;
+
+console.log(`${game1}\n${game2}\n${remainingGames}`);
+
+const game = {
+  gameName: game1,
+  genre: "RPG",
+  durationToComplete: "100+"
+}
+
+const { gameName, genre, durationToComplete } = game;
+
+console.log(`The ${genre} game ${gameName} needs ${durationToComplete} hours to be completed.`);
+
