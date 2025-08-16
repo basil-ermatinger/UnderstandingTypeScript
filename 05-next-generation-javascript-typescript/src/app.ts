@@ -89,7 +89,7 @@ const game = {
   durationToComplete: "100+"
 }
 
-const { gameName, genre, durationToComplete } = game;
+const { gameName, genre, durationToComplete: durationInHour } = game;
 
-console.log(`The ${genre} game ${gameName} needs ${durationToComplete} hours to be completed.`);
+console.log(`The ${genre} game ${gameName} needs ${durationInHour} hours to be completed.`);
 
