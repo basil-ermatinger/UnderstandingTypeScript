@@ -43,3 +43,30 @@ function loadData(source) {
 }
 loadData(fileSource);
 loadData(dbSource);
+// Discriminated unions
+var MediaType;
+(function (MediaType) {
+    MediaType[MediaType["Game"] = 0] = "Game";
+    MediaType[MediaType["Movie"] = 1] = "Movie";
+})(MediaType || (MediaType = {}));
+const game = {
+    type: MediaType.Game,
+    platform: "PC",
+    genre: "RPG",
+    name: "A Horror Game",
+};
+const movie = {
+    type: MediaType.Movie,
+    durationInMins: 90,
+    genre: "Comedy",
+    name: "A Comedy Movie"
+};
+function logMedia(media) {
+    if (media.type === MediaType.Game) {
+        console.log(`The game ${media.name} is a ${media.genre} movie and can be played on a ${media.platform}`);
+        return;
+    }
+    console.log(`The movie ${media.name} is a ${media.genre} movie and has a duration of ${media.durationInMins} minutes.`);
+}
+logMedia(game);
+logMedia(movie);

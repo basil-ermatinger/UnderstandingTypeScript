@@ -97,3 +97,43 @@ function loadData(source: Source) {
 
 loadData(fileSource);
 loadData(dbSource);
+
+// Discriminated unions
+enum MediaType {
+  Game,
+  Movie
+}
+
+type Game = { type: MediaType.Game, platform: string };
+type Movie = { type: MediaType.Movie, durationInMins: number };
+type MediaDetails = { genre: string, name: string };
+
+type MediaGame = Game & MediaDetails;
+type MediaMovie = Movie & MediaDetails;
+
+type Media = MediaGame | MediaMovie;
+
+const game: MediaGame = {
+  type: MediaType.Game,
+  platform: "PC",
+  genre: "RPG",
+  name: "A Horror Game",
+}
+
+const movie: MediaMovie = {
+  type: MediaType.Movie,
+  durationInMins: 90,
+  genre: "Comedy",
+  name: "A Comedy Movie"
+}
+
+function logMedia(media: Media): void {
+  if(media.type === MediaType.Game) {
+    console.log(`The game ${media.name} is a ${media.genre} movie and can be played on a ${media.platform}`);
+    return;
+  }
+  console.log(`The movie ${media.name} is a ${media.genre} movie and has a duration of ${media.durationInMins} minutes.`);
+}
+
+logMedia(game);
+logMedia(movie);
