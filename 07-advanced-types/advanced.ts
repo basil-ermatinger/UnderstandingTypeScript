@@ -1,4 +1,6 @@
-// Index types
+/*********************************
+ * Index types
+ *********************************/
 
 type DataStore = {
   [prop: string]: number | boolean;
@@ -9,28 +11,20 @@ let store: DataStore = {};
 store.id = 5;
 store.isOpen = false;
 
-if(store.isOpen) {
-  console.log(`Store with Id ${store.id} is open`);
-} else {
-  console.log(`Store with Id ${store.id} is closed`);
-}
-
 // constant types with "as const"
 
 let roles = ["admin", "guest", "editor"];
 roles.push("visitor");
 const firstRole = roles[0];
 
-console.log(firstRole);
-
 let rolesConst = ["admin", "guest", "editor"] as const;
 // rolesConst.push("visitor") -> won't work because rolesConst is readonly
 
 const firstRoleConst = rolesConst[0];
 
-console.log(firstRoleConst);
-
-// "satisfies" keyword
+/*********************************
+ * "satisfies" keyword
+ *********************************/
 
 const dataEntries: Record<string, number> = {
   entry1: 0.51,
@@ -38,10 +32,6 @@ const dataEntries: Record<string, number> = {
 }
 
 dataEntries.entry3 = 42;
-
-console.log(dataEntries.entry1);
-console.log(dataEntries.entry3);
-console.log(dataEntries.entry4);
 
 const dataEntriesSatisfied = {
   entry1: 1,
@@ -59,6 +49,4 @@ const dataEntriesWithContract = {
   entry1: 5,
   entry2: 6
 } satisfies satisfiedContract;
-
-console.log(dataEntriesWithContract.entry1);
 

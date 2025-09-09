@@ -1,4 +1,6 @@
-// Intersection types
+/*********************************
+ * Intersection types
+ *********************************/
 
 type FileData = {
   path: string;
@@ -32,10 +34,9 @@ const accessedDatabaseData: AccessedDatabaseData = {
   errorMessage: "An error occured in accessing database data"
 }
 
-console.log(`Accessed a file with path ${accessedFileData.path} and content \"${accessedFileData.content}\". Status is ${accessedFileData.isOpen ? 'open' : 'closed'} and in case of an error the following message appears: ${accessedFileData.errorMessage}`);
-console.log(`Accessed a DB with connection url ${accessedDatabaseData.connectionUrl} with credentials \"${accessedDatabaseData.credentials}\". Status is ${accessedDatabaseData.isOpen ? 'open' : 'closed'} and in case of an error the following message appears: ${accessedDatabaseData.errorMessage}`);
-
-// Intersection interfaces
+/*********************************
+ * Intersection interfaces
+ *********************************/
 
 interface IFileData {
   path: string;
@@ -69,10 +70,9 @@ const accessedDatabaseDataInterface: IAccessedDatabaseData = {
   errorMessage: "An error occured in accessing database data"
 }
 
-console.log(`Accessed a file with path ${accessedFileDataInterface.path} and content \"${accessedFileDataInterface.content}\". Status is ${accessedFileDataInterface.isOpen ? 'open' : 'closed'} and in case of an error the following message appears: ${accessedFileDataInterface.errorMessage}`);
-console.log(`Accessed a DB with connection url ${accessedDatabaseDataInterface.connectionUrl} with credentials \"${accessedDatabaseDataInterface.credentials}\". Status is ${accessedDatabaseDataInterface.isOpen ? 'open' : 'closed'} and in case of an error the following message appears: ${accessedDatabaseDataInterface.errorMessage}`);
-
-// Type guards
+/*********************************
+ * Type guards
+ *********************************/
 
 type FileSource = { path: string };
 type DbSource = { connectionUrl: string };
@@ -92,13 +92,15 @@ function loadData(source: Source) {
     console.log(`Open file in path ${source.path}`);
     return;
   }
-  console.log(`Open database connection with connection url ${source.connectionUrl}`);
 }
 
 loadData(fileSource);
 loadData(dbSource);
 
-// Discriminated unions
+/*********************************
+ * Discriminated unions
+ *********************************/
+
 enum MediaType {
   Game,
   Movie
@@ -129,10 +131,8 @@ const movie: MediaMovie = {
 
 function logMedia(media: Media): void {
   if(media.type === MediaType.Game) {
-    console.log(`The game ${media.name} is a ${media.genre} movie and can be played on a ${media.platform}`);
     return;
   }
-  console.log(`The movie ${media.name} is a ${media.genre} movie and has a duration of ${media.durationInMins} minutes.`);
 }
 
 logMedia(game);
