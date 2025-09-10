@@ -1,5 +1,5 @@
 /******************************************************************
- * Creating & using generic types
+ * Creating & Using Generic Types
  ******************************************************************/
 
 type DataStore<T> = {
@@ -16,7 +16,7 @@ nameStore.name1 = "Basil";
 nameStore.name2 = "Markus";
 
 /******************************************************************
- * Generic functions and inference
+ * Generic Functions and Inference
  ******************************************************************/
 
 const merge = <T>(a: T, b: T) => {
@@ -27,7 +27,7 @@ const ids = merge<number>(1, 2);
 const ids2 = merge(3, 4);
 
 /******************************************************************
- * Working with multiple generic parameters
+ * Working with Multiple Generic Parameters
  ******************************************************************/
 
 const mergeTwoGenerics = <T, U>(a: T, b: U) => {
@@ -36,3 +36,13 @@ const mergeTwoGenerics = <T, U>(a: T, b: U) => {
 
 const ids3 = mergeTwoGenerics<number, string>(1, "Two");
 const ids4 = mergeTwoGenerics(3, "Four");
+
+/******************************************************************
+ * Generics & Constraints
+ ******************************************************************/
+
+const mergeObj = <T extends object>(a: T, b: T) => {
+  return { ...a, ...b };
+};
+
+const merged = mergeObj({userName: "Basil"}, { age: 39 });
