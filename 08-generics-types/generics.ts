@@ -45,4 +45,14 @@ const mergeObj = <T extends object>(a: T, b: T) => {
   return { ...a, ...b };
 };
 
-const merged = mergeObj({userName: "Basil"}, { age: 39 });
+const merged = mergeObj({ userName: "Basil"}, { age: 39 });
+
+/******************************************************************
+ * Constraints & Multiple Generic Types
+ ******************************************************************/
+
+const mergeObjMult = <T extends object, U extends object>(a: T, b: U) => {
+  return { ...a, ...b };
+};
+
+const mergedMult = mergeObjMult({ userName: "Basil"}, { age: 39 });
