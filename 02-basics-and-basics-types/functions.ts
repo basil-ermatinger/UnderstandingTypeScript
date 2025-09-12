@@ -1,36 +1,35 @@
-// Function Return Value Types
-console.log("\nFUNCTION RETURN VALUE TYPES");
+/******************************************************************
+ * Function Return Value Types
+ ******************************************************************/
 
 const addNumbers = (a: number, b: number): number => {
   return a + b;
 }
 
 let addedNumber: number;
-
 addedNumber = addNumbers(1, 2);
-console.log(addedNumber);
 
-// "void" Type
-console.log("\n\"VOID\" TYPE")
+/******************************************************************
+ * "Void" Type
+ ******************************************************************/
 
 const log = (message: string) => {
   console.log(message);
 }
 
-log("TestMessage");
+/******************************************************************
+ * "Never" Type
+ ******************************************************************/
 
-// "never" type
-console.log("\n\"NEVER\" TYPE");
-
+// "never" means “never ends normally, e.g., due to an error or infinite loop.”
+// Would also work with "void" but is less specific
 function logAndThrow(errorMessage: string): never {
-  console.log(errorMessage);
   throw new Error(errorMessage);
 }
 
-// const logError = logAndThrow("This is an error message!");
-
-// Functions as Types
-console.log("\nFUNCTION AS TYPES");
+/******************************************************************
+ * Functions as Types
+ ******************************************************************/
 
 const logMsg = (msg: string) => {
   console.log(msg);
@@ -53,9 +52,6 @@ let userTest: User = {
   name: "Basil",
   age: 39,
   greet() {
-    console.log("Hello there!");
     return `Greetings from ${this.name}`;
   }
 }
-
-console.log(userTest.greet());
