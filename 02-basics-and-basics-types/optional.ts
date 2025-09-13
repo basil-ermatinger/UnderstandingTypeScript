@@ -1,4 +1,6 @@
-// Optional
+/******************************************************************
+ * Optional
+ ******************************************************************/
 type UserWithOptional = {
   name: string;
   age: number;
@@ -16,9 +18,6 @@ const userWithOptionalTwo: UserWithOptional = {
   age: 40
 }
 
-console.log(userWithOptionalOne);
-console.log(userWithOptionalTwo);
-
 function generateError(msg?: string) {
   if(msg) {
     throw new Error(msg);
@@ -27,16 +26,15 @@ function generateError(msg?: string) {
   }
 }
 
-// generateError();
-// generateError("Error")
+generateError();
+generateError("Error")
 
-// Nullish Coalescing Operator
+/******************************************************************
+ * Nullish Coalescing Operator
+ ******************************************************************/
+
 let input = null;
-
 let didProvideInput: string | boolean | null = input ?? false;
-console.log(didProvideInput);
 
 input = "";
 didProvideInput = input ?? false;
-console.log(didProvideInput);
-
