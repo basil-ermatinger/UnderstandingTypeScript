@@ -5,13 +5,17 @@ interface IAuthenticatable {
   logout(): void;
 }
 
-// Merge interface
+/******************************************************************
+ * Merge Interface
+ ******************************************************************/
 
 interface IAuthenticatable {
   role: string;
 }
 
-// interface as object type
+/******************************************************************
+ * Interface as Object Type
+ ******************************************************************/
 
 let user: IAuthenticatable;
 
@@ -30,7 +34,9 @@ user = {
 user.login();
 user.logout();
 
-// implementing interfaces
+/******************************************************************
+ * Implementing Interfaces
+ ******************************************************************/
 
 class AuthenticatableUser implements IAuthenticatable {
   constructor(public userName: string, public email: string, public password: string, public role: string) {}
@@ -49,7 +55,9 @@ const authenticatableUser: AuthenticatableUser = new AuthenticatableUser("Basil"
 authenticatableUser.login();
 authenticatableUser.logout();
 
-// Ensuring base types with interfaces
+/******************************************************************
+ * Ensuring Base Types with Interfaces
+ ******************************************************************/
 
 const authenticate = (user: IAuthenticatable): void => {
   user.email = "auth@test.ch";
@@ -62,7 +70,9 @@ const authenticate = (user: IAuthenticatable): void => {
 
 authenticate(user);
 
-// Extending interfaces
+/******************************************************************
+ * Extending Interfaces
+ ******************************************************************/
 
 interface IAuthenticatableAdmin extends IAuthenticatable {
   adminPermission: "admin" | "superadmin";

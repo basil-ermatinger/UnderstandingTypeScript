@@ -1,6 +1,6 @@
-/**
- * Classes, public/private, Getters, Setters, static properties and methods
- */
+/**************************************************************************
+ * Classes, public/private, Getters, Setters, Static Properties and Methods
+ **************************************************************************/
 
 class User {
   protected _firstName: string = "";
@@ -33,7 +33,6 @@ class User {
   }
 }
 
-console.log(User.eid);
 User.greet();
 
 const basil = new User();
@@ -41,11 +40,9 @@ const basil = new User();
 basil.firstName = "Basil";
 basil.lastName = "Ermatinger";
 
-console.log(basil.fullName);
-
-/**
+/******************************************************************
  * Inheritance
- */
+ ******************************************************************/
 
 class Employee extends User {
   constructor(public jobTitle: string) {
@@ -61,9 +58,9 @@ const employee1 = new Employee("Manager");
 employee1.firstName = "Peter";
 employee1.work();
 
-/**
- * Abstract class
- */
+/******************************************************************
+ * Abstract Class
+ ******************************************************************/
 
 abstract class UiElement {
   constructor(public identifier: string) {}
